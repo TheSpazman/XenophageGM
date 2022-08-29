@@ -36,6 +36,11 @@ horizspeed = move * walkspeed;
 
 vertspeed = vertspeed + grav;
 
+
+///////////////////////////////////
+// Player Jump Animation and Controls
+///////////////////////////////////
+
 if (place_meeting(x,y+1,oWall)) and (key_jump)
 {
 	vertspeed = -8;
@@ -83,14 +88,29 @@ y = y + vertspeed;
 var frame = 0 //This picks out a frame number based on the direction the player is facing. Moving counter-clockwise from right, 0 = right, 7 = down-right, and 8 is center.
 var direc = point_direction(x,y,mouse_x,mouse_y)
 
+
+
+	//if not touching solid, player begins jump sprite, stops on last frame
 if (!place_meeting(x,y+1,oWall))
 {
-
-	sprite_index = sPlayerAir; 
-	image_speed = 0;
-	if (sign(vertspeed) > 0) image_index = 4; else image_index = 0; //This all plays if the player is in the air currently.
+{
+	   sprite_index = sPlayerJump;
+		    if (image_index = 1) image_speed = 0;
+	}
+	//if player is moving down, image speed is set to 1 and fall start begins
+	if (sign(vertspeed) > 0)
+	{
+	    sprite_index = sPlayerFall;
+		
+	}
+	//Player stands after landing
+	if (place_meeting(x,y+1,oWall)) sprite_index = sPlayerIdle;
+	
+		
+   
 	
 }
+
 else
 {
 	
@@ -122,3 +142,4 @@ if (horizspeed != 0) image_xscale = sign(horizspeed);
 //////////////////////////////////
 
 
+	
