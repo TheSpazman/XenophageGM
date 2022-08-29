@@ -1,14 +1,10 @@
 /// Oh, so THIS is how to comment!
 
-//////////////////////////////////////////////
-// These are Keyboard checks. Two types here; Virtual-Keyboard and keyboard checks.
-// These get player input.
-//////////////////////////////////////////////
 
-key_left = keyboard_check(ord("A")) || keyboard_check(vk_left);
-key_right = keyboard_check(ord("D")) || keyboard_check (vk_right); 
-key_jump = keyboard_check_pressed(vk_space);
-key_jump_held = keyboard_check(vk_space); 
+
+
+
+
 
 ///////////////////////////
 // Checks for when and if the player is moving, and returns a true or false value. 
@@ -33,20 +29,19 @@ var move = key_right - key_left;
 // Walkspeed is 4, so this will always move the player 4 pixels to the left or right,
 // Or not at all.
 horizspeed = move * walkspeed; 
-
 vertspeed = vertspeed + grav;
-
-
 ///////////////////////////////////
 // Player Jump Animation and Controls
 ///////////////////////////////////
 
-if (place_meeting(x,y+1,oWall)) and (key_jump)
+stateFreemove = function()
 {
-	vertspeed = -8;
-}
+	if (place_meeting(x,y+1,oWall)) and (key_jump)
+	{
+		vertspeed = -8;
+	}
 
-if (vertspeed < 0) && (!key_jump_held) vertspeed = max(vertspeed,0) //Added 8/29/2022 -- Jump key must be held to reach full height, otherwise, subtract value.
+	if (vertspeed < 0) && (!key_jump_held) vertspeed = max(vertspeed,0) //Added 8/29/2022 -- Jump key must be held to reach full height, otherwise, subtract value.
 
 // Horizontal Collision 
 
