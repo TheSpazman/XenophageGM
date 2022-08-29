@@ -14,6 +14,7 @@
     {"id":{"name":"sPlayerFall","path":"sprites/sPlayerFall/sPlayerFall.yy",},"order":14,},
     {"id":{"name":"sPlayerShootS","path":"sprites/sPlayerShootS/sPlayerShootS.yy",},"order":12,},
     {"id":{"name":"sPlayerAir","path":"sprites/sPlayerAir/sPlayerAir.yy",},"order":3,},
+    {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":5,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"sPlayerShootA","path":"sprites/sPlayerShootA/sPlayerShootA.yy",},"order":10,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},

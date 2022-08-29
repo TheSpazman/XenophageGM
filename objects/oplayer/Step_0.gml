@@ -94,14 +94,13 @@ var direc = point_direction(x,y,mouse_x,mouse_y)
 if (!place_meeting(x,y+1,oWall))
 {
 {
-	   sprite_index = sPlayerJump;
-		    if (image_index = 1) image_speed = 0;
-	}
+	        sprite_index = sPlayerJump;
+		    if (image_index == 1) image_speed = 0;
+}
 	//if player is moving down, image speed is set to 1 and fall start begins
 	if (sign(vertspeed) > 0)
 	{
-	    sprite_index = sPlayerFall;
-		
+	    sprite_index = sPlayerFalling;
 	}
 	//Player stands after landing
 	if (place_meeting(x,y+1,oWall)) sprite_index = sPlayerIdle;
