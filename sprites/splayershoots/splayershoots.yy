@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 36,
-  "height": 37,
+  "height": 40,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -83,7 +83,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 18,
-    "yorigin": 18,
+    "yorigin": 20,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sPlayerShootS","path":"sprites/sPlayerShootS/sPlayerShootS.yy",},
