@@ -12,8 +12,21 @@ key_right = keyboard_check(ord("D")) || keyboard_check (vk_right); // Player Mov
 key_inven = keyboard_check(ord("I")) // Player uses Inventory hotkey.
 key_jump = keyboard_check_pressed(vk_space); // Player Jumps.
 key_jump_held = keyboard_check(vk_space);  // Player Holds the Jump Button.
+mouse_clicked = mouse_check_button_pressed(mb_left)
 move = 0;  // Player is moving.
 key_pressed = 0 // Player does / does not have a key pressed.
+onGround = 0 // Whether the player is on the ground or not.
+
+
+// PLAYER ATTRIBUTES // 
+player_health = 100; 
+player_resolve = 100; 
+player_balance = 0; 
+player_jump_fuel = 100; 
+player_hud_item_screen = 0; 
+
+
+
 
 // ANIMATION SYSTEM //
 animframe = 0;                                        // Animation System Frame

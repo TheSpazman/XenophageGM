@@ -15,7 +15,7 @@
 
 if (key_left) || (key_right) || (key_jump)
 {
-	controller = 0; 
+	global.controller = 0; 
 }
 	
 if (abs(gamepad_axis_value(0,gp_axislh)) > 0.2) 

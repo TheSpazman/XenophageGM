@@ -12,10 +12,12 @@ function scr_player_move()
 	key_inven = keyboard_check(ord("I")) // Player uses Inventory hotkey.
 	key_jump = keyboard_check_pressed(vk_space); // Player Jumps.
 	key_jump_held = keyboard_check(vk_space);  // Player Holds the Jump Button.
+	mouse_clicked = mouse_check_button_pressed(mb_left) // Checks for Player clicking ther Left Mouse Button / Fire Button
+	
 	
 //Checking for Controller.
 
-if (key_left) || (key_right) || (key_jump)
+if (key_left) || (key_right) || (key_jump) || (mouse_clicked)
 {
 	controller = 0; 
 	key_pressed = 1;

@@ -5,6 +5,7 @@ function scr_player_jump(){
 	{
 		vertspeed = -8;
 		horizspeed = 0;
+		onGround = 0;
 		state = "KaDinJump"
 	}
 
