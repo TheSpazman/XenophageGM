@@ -14,28 +14,94 @@ function scr_player_physics_normal(){
 	
 
 
-// COLLISION MECHANICS HERE. 
+// OLD COLLISION MECHANICS HERE. 
 // Horizontal Collision 
 
-	if (place_meeting(x+horizspeed,y,oWall))
-	{
-		while (!place_meeting(x+sign(horizspeed),y,oWall))  //While Statements -repeatedly- run checks, as opposed to 'if' statements, which run once.
-		{                                                   //In this case, We're making sure the player is flush with the wall.
-			x = x + sign(horizspeed); 
-		}
-		horizspeed = 0;
-	}
-	x = x + horizspeed;
+//	if (place_meeting(x+horizspeed,y,oWall))
+//	{
+//		while (abs(horizspeed)> 0.1)  //While Statements -repeatedly- run checks, as opposed to 'if' statements, which run once.
+//		{                             
+//			horizspeed *= 0.5;//In this case, We're making sure the player is flush with the wall.
+//			if (!place_meeting(x + horizspeed, y, oWall)) x += horizspeed; 
+//		}
+//		horizspeed = 0;
+//	}
+//	x += horizspeed;
+	
+	 // Move up slope
+//    if (place_meeting(x + sign(horizspeed), y, oWall) && !place_meeting(x + sign(horizspeed), y - 1, oWall))
+//        --y;
+    
+    // Move down slope
+//    if (!place_meeting(x + sign(horizspeed), y, oWall) && !place_meeting(x + sign(horizspeed), y + 1, oWall) && place_meeting(x + sign(horizspeed), y + 2, oWall))
+//        ++y; 
 
 // Vertical Collision 
 
-	if (place_meeting(x,y+vertspeed,oWall))
-	{
-		while (!place_meeting(x,y+sign(vertspeed),oWall))  //While Statements -repeatedly- run checks, as opposed to 'if' statements, which run once.
-		{                                                   //In this case, We're making sure the player is flush with the wall.
-			y = y + sign(vertspeed); 
-		}
-		vertspeed = 0;
-	}
-	y = y + vertspeed;
+//	if (place_meeting(x,y+vertspeed,oWall))
+//	{
+//		if (vertspeed > 0) canJump = 10; 
+//		while (abs(vertspeed) > 0.1)//While Statements -repeatedly- run checks, as opposed to 'if' statements, which run once.
+//		{                                                   //In this case, We're making sure the player is flush with the wall.
+//			vertspeed *= 0.5;
+//			if (!place_meeting(x,y + vertspeed, oWall)) y += vertspeed;
+//		}
+//		vertspeed = 0;
+//	}
+//	y += vertspeed;
+// Vertical
+
+// NEW ANIMATION CODE HERE + SLOPES 
+
+    repeat(abs(vertspeed))
+    {
+        if (!place_meeting(x, y + sign(vertspeed), oWall))
+            y += sign(vertspeed); 
+        else {
+            vertspeed = 0;
+			canJump = 10;
+            break;
+        }
+    }
+
+    // Horizontal
+    repeat(abs(horizspeed))
+    {
+        // Move up slope
+        if (place_meeting(x + sign(horizspeed), y, oWall) &&
+            place_meeting(x + sign(horizspeed), y - 1, oWall) &&
+            !place_meeting(x + sign(horizspeed), y - 2, oWall))
+        {
+            y -= 2;
+        }
+        else if (place_meeting(x + sign(horizspeed), y, oWall) && 
+                !place_meeting(x + sign(horizspeed), y - 1, oWall))
+        {
+            --y;
+        }
+    
+        // Move down slope
+        if (!place_meeting(x + sign(horizspeed), y, oWall) &&
+            !place_meeting(x + sign(horizspeed), y + 1, oWall) &&
+            !place_meeting(x + sign(horizspeed), y + 2, oWall) &&
+            place_meeting(x + sign(horizspeed), y + 3, oWall))
+        {
+            y += 2;
+        }
+        else if (!place_meeting(x + sign(horizspeed), y, oWall) &&
+                !place_meeting(x + sign(horizspeed), y + 1, oWall) &&
+                place_meeting(x + sign(horizspeed), y + 2, oWall))
+        {
+            ++y; 
+        }
+
+        if (!place_meeting(x + sign(horizspeed), y, oWall))
+            x += sign(horizspeed); 
+        else {
+            horizspeed = 0;
+            break;
+        }
+    }
+
 }
+

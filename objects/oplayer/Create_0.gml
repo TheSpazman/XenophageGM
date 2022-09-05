@@ -4,6 +4,8 @@ horizspeed = 0;                                       // Horizontal Speed.
 vertspeed = 0;                                        // Vertical Speed. 
 grav = 0.2;                                           // Gravity. 
 walkspeed = 4;                                        // Player Walking Speed. 
+canJump = 0;										  // Is Player on the Ground?
+vertJump = -9;										  // Speed when the player jumps.
 
 // PLAYER CONTROL VARIABLES AND CONSTANTS //
 controller = 0;                                       // Is the player using a controller? 0 for No, 1 for Yes. 

@@ -1,11 +1,11 @@
 
 function scr_player_jump(){
 // Player Jump Animation and Controls
-	if (place_meeting(x,y+1,oWall)) && (key_jump)
+	if (canJump-- > 0) && (key_jump)  
 	{
-		vertspeed = -8;
+		vertspeed = vertJump;
 		horizspeed = 0;
-		onGround = 0;
+		canJump = 0;
 		state = "KaDinJump"
 	}
 

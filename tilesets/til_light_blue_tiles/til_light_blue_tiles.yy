@@ -1,9 +1,4 @@
 {
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "name": "til_light_blue_tiles",
   "spriteId": {
     "name": "sLightBlueTiles",
     "path": "sprites/sLightBlueTiles/sLightBlueTiles.yy",
@@ -14,9 +9,13 @@
   "tileyoff": 0,
   "tilehsep": 0,
   "tilevsep": 0,
+  "spriteNoExport": false,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
   "out_tilehborder": 2,
   "out_tilevborder": 2,
-  "spriteNoExport": true,
   "out_columns": 13,
   "tile_count": 160,
   "autoTileSets": [],
@@ -197,6 +196,7 @@
     "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
+  "name": "til_light_blue_tiles",
   "tags": [],
   "resourceType": "GMTileSet",
 }

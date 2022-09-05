@@ -11,9 +11,9 @@ function scr_player_jump_anim(){
         sprite_index = sPlayerJump;
 		show_debug_message("Player is rising")
     }
-    }
+    
   
-        if vertspeed >= -1 and !place_meeting(x,y,oWall) and state == "KaDinJump"  and (image_index >= image_number - 2) and sprite_index != sPlayerJump 
+        if vertspeed >= 0 and !place_meeting(x,y,oWall) and state == "KaDinJump"  and (image_index >= image_number - 2) and sprite_index != sPlayerJump 
     {    
 		  if horizspeed < 0 image_xscale = -1
         if horizspeed > 0 image_xscale = 1
@@ -22,7 +22,7 @@ function scr_player_jump_anim(){
     }
 
    
-        if vertspeed >= 2 and !place_meeting(x,y,oWall) and state == "KaDinJump" and sprite_index = sPlayerJump
+        if vertspeed >= 1 and !place_meeting(x,y,oWall) and state == "KaDinJump" and sprite_index = sPlayerJump
     {    
 		  if horizspeed < 0 image_xscale = -1
         if horizspeed > 0 image_xscale = 1
@@ -30,11 +30,19 @@ function scr_player_jump_anim(){
 		show_debug_message("Player is about to fall.")
     }
 
-		if vertspeed >= 3 and !place_meeting(x,y,oWall) and state == "KaDinJump" and sprite_index = sPlayerFall
+		if vertspeed >= 2 and !place_meeting(x,y,oWall) and state == "KaDinJump" and sprite_index = sPlayerFall
     {    
 		  if horizspeed < 0 image_xscale = -1
         if horizspeed > 0 image_xscale = 1
         sprite_index = sPlayerFalling
 		show_debug_message("Player is falling.")
     }
+		if vertspeed == 0 and place_meeting(x,y,oWall) and state == "KaDinJump" and sprite_index = sPlayerFalling
+    {    
+		  if horizspeed < 0 image_xscale = -1
+        if horizspeed > 0 image_xscale = 1
+        sprite_index = sPlayerLand
+		show_debug_message("Player has landed.")
+    }
+}
 }

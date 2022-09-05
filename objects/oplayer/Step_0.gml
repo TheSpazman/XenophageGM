@@ -46,6 +46,17 @@ switch (state)
 		{
 			state = "KaDinIdle"	
 		}
+		
+	}
+	break;
+		case "KaDinFalling":  
+	{
+		scr_mouse_cursor_switch();
+		scr_player_move();
+		scr_player_physics_normal();
+		scr_player_animate_move();
+		scr_player_jump();
+		
 	}
 	break;
 	case "KaDinJump":  
@@ -61,8 +72,28 @@ switch (state)
 		{
 			state = "KaDinMoving"
 		}
+		
 	}
 	break;
+	case "KaDinJumping":  
+	{
+		scr_mouse_cursor_switch();
+		scr_player_move();
+		scr_player_physics_normal();
+		scr_player_animate_move();
+		scr_player_jump();
+	}
+	break;
+		case "KaDinFall":  
+	{
+		scr_mouse_cursor_switch();
+		scr_player_move();
+		scr_player_physics_normal();
+		scr_player_animate_move();
+		scr_player_jump();
+	}
+	break;
+	
 	case "KaDinCrouch":  
 	{
 	}
