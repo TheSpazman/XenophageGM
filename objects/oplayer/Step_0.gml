@@ -1,8 +1,8 @@
-show_debug_message(state)
-show_debug_message(animtimer)
-show_debug_message(key_pressed)
-show_debug_message(onGround)
-show_debug_message(controller)
+window_set_caption(state)
+//show_debug_message(animtimer)
+//show_debug_message(key_pressed)
+//show_debug_message(onGround)
+//show_debug_message(controller)
 switch (state)
 {
 	case "KaDinIdle":
@@ -13,6 +13,7 @@ switch (state)
 		scr_player_physics_normal();
 		scr_player_animate_move();
 		scr_player_jump();
+		scr_player_idle_anim();
 		animtimer = 0;
 		
 		if key_left || key_right 
@@ -22,7 +23,12 @@ switch (state)
 		
 		if key_jump 
 		{
-			state = "KaDinJump"
+			state = "KaDinUpwards"
+		}
+		
+		if key_down
+		{
+		   state = "KaDinCrouch"	
 		}
 		
 	}
@@ -42,27 +48,20 @@ switch (state)
 		scr_player_physics_normal();
 		scr_player_animate_move();
 		scr_player_jump();
-		if animtimer >= max_animtimer && (horizspeed = 0 && vertspeed = 0)
+		if animtimer >= max_animtimer && (horizspeed == 0 && vertspeed == 0)
 		{
 			state = "KaDinIdle"	
 		}
 		
 	}
 	break;
-		case "KaDinFalling":  
+
+	case "KaDinUpwards": 
+	case "KaDinJumpPeak":
+	case "KaDinJumpFalling":
 	{
 		scr_mouse_cursor_switch();
-		scr_player_move();
-		scr_player_physics_normal();
-		scr_player_animate_move();
-		scr_player_jump();
-		
-	}
-	break;
-	case "KaDinJump":  
-	{
-		scr_mouse_cursor_switch();
-		scr_player_jump_anim();
+		scr_player_jump_anim2();
 		scr_player_move();
 		scr_player_physics_normal();
 		scr_player_animate_move();
@@ -70,32 +69,25 @@ switch (state)
 		animtimer = 0;
 		if (place_meeting(x,y+1,oWall)) && !key_jump
 		{
+			show_debug_message("Player has landed.")
+			image_speed = 1
 			state = "KaDinMoving"
 		}
 		
 	}
-	break;
-	case "KaDinJumping":  
-	{
-		scr_mouse_cursor_switch();
-		scr_player_move();
-		scr_player_physics_normal();
-		scr_player_animate_move();
-		scr_player_jump();
-	}
-	break;
-		case "KaDinFall":  
-	{
-		scr_mouse_cursor_switch();
-		scr_player_move();
-		scr_player_physics_normal();
-		scr_player_animate_move();
-		scr_player_jump();
-	}
+	
 	break;
 	
 	case "KaDinCrouch":  
 	{
+		scr_mouse_cursor_switch();
+		scr_player_move();
+		scr_player_physics_normal();
+		scr_player_animate_move();
+		scr_player_jump();
+		
+		if (!key_down) 
+			state = "KaDinIdle" 
 	}
 	break;
 	case "KaDinShoot":  

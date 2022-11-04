@@ -28,7 +28,7 @@ if ((mouse_check_button(mb_left)) || gamepad_button_check(0,gp_shoulderrb)) && (
 	with (instance_create_layer(x,y,"WeaponShot",oShot1))
 	{
 		
-		speed = 8;
+		speed = 12;
 		direction = other.image_angle + random_range(-3,3);
 		image_angle = direction;
 	}

@@ -6,8 +6,7 @@ function scr_player_physics_normal(){
 
 // Normal Player Movement and Default Speed / Gravity Values
 	
-	move = key_right - key_left; // Movement Calculations -- Result here will always be 1, 0, or -1. 
-	horizspeed = move * walkspeed; // Horizontal Speed = either 1,0, or -1 * 4. Which will always result in either Moving 4 px left, right, or not at all.
+	move = key_right - key_left; // Movement Calculations -- Result here will always be 1, 0, or -1.  // Horizontal Speed = either 1,0, or -1 * 4. Which will always result in either Moving 4 px left, right, or not at all.
 	vertspeed = vertspeed + grav; // Vertical Speed is 0, plus the effects of gravity, which is 0.2. Positive numbers = downward. Negative numbers = Upward.
 	
 	
@@ -51,6 +50,30 @@ function scr_player_physics_normal(){
 //	y += vertspeed;
 // Vertical
 
+//ACCELERATION / FRICTION SCRIPTING // 
+
+		if move != 0 
+		
+		{
+			
+			if (move == 1) horizspeed = min(walkspeed, horizspeed + accel); //accelerate going right
+			if (move == -1) horizspeed = max(-walkspeed, horizspeed - accel); //accelerate going left
+			
+		}    
+		
+	else 
+	
+		{
+			if (horizspeed > 0) horizspeed = max(0, horizspeed - f_riction); //friction going right
+			if (horizspeed < 0) horizspeed = min(0, horizspeed + f_riction); //friction going left
+			
+		}
+
+
+
+
+
+
 // NEW ANIMATION CODE HERE + SLOPES 
 
     repeat(abs(vertspeed))
@@ -59,7 +82,7 @@ function scr_player_physics_normal(){
             y += sign(vertspeed); 
         else {
             vertspeed = 0;
-			canJump = 10;
+			canJump = 1;
             break;
         }
     }

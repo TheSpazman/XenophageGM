@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "oSlope45Down",
   "spriteId": {
     "name": "sSlope45Down",
     "path": "sprites/sSlope45Down/sSlope45Down.yy",
@@ -31,8 +34,4 @@
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "oSlope45Down",
-  "tags": [],
-  "resourceType": "GMObject",
 }

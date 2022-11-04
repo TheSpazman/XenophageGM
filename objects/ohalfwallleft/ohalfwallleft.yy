@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "oHalfWallLeft",
   "spriteId": {
     "name": "sHalfWallLeft",
     "path": "sprites/sHalfWallLeft/sHalfWallLeft.yy",
@@ -31,8 +34,4 @@
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "oHalfWallLeft",
-  "tags": [],
-  "resourceType": "GMObject",
 }
