@@ -1,18 +1,20 @@
 window_set_caption(state)
 //show_debug_message(animtimer)
 //show_debug_message(key_pressed)
-//show_debug_message(onGround)
+show_debug_message(onGround)
 //show_debug_message(controller)
 switch (state)
 {
 	case "KaDinIdle":
 	{
+		scr_debug_keys();
+		scr_player_fuel_regen();
 		scr_mouse_cursor_switch();
 		scr_player_move();
 		scr_set_state_sprite(sPlayer,1,0);
+		scr_player_jump();
 		scr_player_physics_normal();
 		scr_player_animate_move();
-		scr_player_jump();
 		scr_player_idle_anim();
 		animtimer = 0;
 		
@@ -43,11 +45,14 @@ switch (state)
 		{
 			animtimer = 0;
 		}
+		scr_debug_keys();
+		scr_player_fuel_regen();
 		scr_mouse_cursor_switch();
 		scr_player_move();
+		scr_player_jump();
 		scr_player_physics_normal();
 		scr_player_animate_move();
-		scr_player_jump();
+		
 		if animtimer >= max_animtimer && (horizspeed == 0 && vertspeed == 0)
 		{
 			state = "KaDinIdle"	
@@ -80,12 +85,11 @@ switch (state)
 	
 	case "KaDinCrouch":  
 	{
+		scr_player_fuel_regen();
 		scr_mouse_cursor_switch();
 		scr_player_move();
 		scr_player_physics_normal();
 		scr_player_animate_move();
-		scr_player_jump();
-		
 		if (!key_down) 
 			state = "KaDinIdle" 
 	}
@@ -102,5 +106,7 @@ switch (state)
 	{
 	}
 	break; 
+	default:
+		throw ("Illegal State! (Fix this, Spaz.)" + state)
 }
 

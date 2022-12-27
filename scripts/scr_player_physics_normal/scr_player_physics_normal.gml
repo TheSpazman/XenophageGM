@@ -5,9 +5,16 @@ function scr_player_physics_normal(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Normal Player Movement and Default Speed / Gravity Values
+	if (key_down) 
+	{
+		move = 0
+	}
+	else 
+	{
+		move = key_right - key_left; // Movement Calculations -- Result here will always be 1, 0, or -1.  // Horizontal Speed = either 1,0, or -1 * 4. Which will always result in either Moving 4 px left, right, or not at all.
+	}
 	
-	move = key_right - key_left; // Movement Calculations -- Result here will always be 1, 0, or -1.  // Horizontal Speed = either 1,0, or -1 * 4. Which will always result in either Moving 4 px left, right, or not at all.
-	vertspeed = vertspeed + grav; // Vertical Speed is 0, plus the effects of gravity, which is 0.2. Positive numbers = downward. Negative numbers = Upward.
+		vertspeed = vertspeed + grav; // Vertical Speed is 0, plus the effects of gravity, which is 0.2. Positive numbers = downward. Negative numbers = Upward.
 	
 	
 	
@@ -80,9 +87,9 @@ function scr_player_physics_normal(){
     {
         if (!place_meeting(x, y + sign(vertspeed), oWall))
             y += sign(vertspeed); 
-        else {
+        else if (place_meeting(x, y + 1, oWall)) {
             vertspeed = 0;
-			canJump = 1;
+			onGround = 1;
             break;
         }
     }

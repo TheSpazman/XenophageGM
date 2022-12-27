@@ -15,6 +15,9 @@ function scr_player_move()
 	key_jump_held = keyboard_check(vk_space);  // Player Holds the Jump Button.
 	mouse_clicked = mouse_check_button_pressed(mb_left) // Checks for Player clicking ther Left Mouse Button / Fire Button
 	
+	// DEBUG KEYS ONLY // 
+
+	
 	
 //Checking for Controller.
 

@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "til_background_tiles",
   "spriteId": {
     "name": "sBackgroundTiles",
     "path": "sprites/sBackgroundTiles/sBackgroundTiles.yy",
@@ -195,8 +198,4 @@
     "name": "Tile Sets",
     "path": "folders/Tile Sets.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "til_background_tiles",
-  "tags": [],
-  "resourceType": "GMTileSet",
 }

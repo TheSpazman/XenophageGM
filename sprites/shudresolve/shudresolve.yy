@@ -158,7 +158,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "HUD-related",
+    "path": "folders/Sprites/HUD-related.yy",
   },
 }
