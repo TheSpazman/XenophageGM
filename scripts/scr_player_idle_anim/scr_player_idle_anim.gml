@@ -8,7 +8,7 @@ function scr_player_idle_anim()
 			if distance_to_point(mouse_x,mouse_y) < 24  
 				{
 					animframe  = 8                                //This is meant to change the player's sprite to a front-facing idle image when within a range of 24px.
-					show_debug_message("Player is idle, facing forward.")
+					//show_debug_message("Player is idle, facing forward.")
 				}
 
 		else 
@@ -24,7 +24,7 @@ function scr_player_idle_anim()
 		
 			sprite_index = sPlayerIdle
 			image_index = animframe	
-			show_debug_message("Idle animation is now playing.")
+			//show_debug_message("Idle animation is now playing.")
 			
 			
 		}

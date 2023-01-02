@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Level-0esign-related",
-    "path": "folders/Sprites/Level-0esign-related.yy",
+    "name": "Level-Design-related",
+    "path": "folders/Sprites/Level-Design-related.yy",
   },
 }

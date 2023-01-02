@@ -1,5 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// Mouse Cursor Graphic 
 
+
+
+cursorSprite = "CursorCrosshairNone"
 window_set_cursor (cr_none);
-

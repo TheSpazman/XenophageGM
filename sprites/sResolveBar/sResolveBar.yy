@@ -92,7 +92,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "HUD-related",
-    "path": "folders/Sprites/HUD-related.yy",
+    "name": "Resolve",
+    "path": "folders/Sprites/HUD-related/Resolve.yy",
   },
 }

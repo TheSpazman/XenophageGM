@@ -31,7 +31,7 @@ switch(state)
 				 }
 					if horizspeed < 0 image_xscale = -1
 					if horizspeed > 0 image_xscale = 1
-					show_debug_message("Player is moving upwards.")
+					//show_debug_message("Player is moving upwards.")
 					if vertspeed > 0 and !place_meeting(x,y,oWall) 
 						{
 							state = "KaDinJumpPeak"
@@ -54,7 +54,7 @@ switch(state)
 						{
 							
 							state = "KaDinJumpFalling"
-							show_debug_message("Player is at the peak of the jump")
+							//show_debug_message("Player is at the peak of the jump")
 						}
 				break;
 				

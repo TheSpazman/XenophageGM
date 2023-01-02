@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "HUD-related",
-    "path": "folders/Sprites/HUD-related.yy",
+    "name": "VDUs and HUD",
+    "path": "folders/Sprites/HUD-related/VDUs and HUD.yy",
   },
 }

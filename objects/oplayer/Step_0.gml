@@ -1,7 +1,7 @@
 window_set_caption(state)
 //show_debug_message(animtimer)
 //show_debug_message(key_pressed)
-show_debug_message(onGround)
+//show_debug_message(onGround)
 //show_debug_message(controller)
 switch (state)
 {
@@ -9,7 +9,7 @@ switch (state)
 	{
 		scr_debug_keys();
 		scr_player_fuel_regen();
-		scr_mouse_cursor_switch();
+		//scr_mouse_cursor_switch();
 		scr_player_move();
 		scr_set_state_sprite(sPlayer,1,0);
 		scr_player_jump();
@@ -47,7 +47,7 @@ switch (state)
 		}
 		scr_debug_keys();
 		scr_player_fuel_regen();
-		scr_mouse_cursor_switch();
+		//scr_mouse_cursor_switch();
 		scr_player_move();
 		scr_player_jump();
 		scr_player_physics_normal();
@@ -65,7 +65,7 @@ switch (state)
 	case "KaDinJumpPeak":
 	case "KaDinJumpFalling":
 	{
-		scr_mouse_cursor_switch();
+		//scr_mouse_cursor_switch();
 		scr_player_jump_anim2();
 		scr_player_move();
 		scr_player_physics_normal();
@@ -74,7 +74,7 @@ switch (state)
 		animtimer = 0;
 		if (place_meeting(x,y+1,oWall)) && !key_jump
 		{
-			show_debug_message("Player has landed.")
+			//show_debug_message("Player has landed.")
 			image_speed = 1
 			state = "KaDinMoving"
 		}
@@ -86,7 +86,7 @@ switch (state)
 	case "KaDinCrouch":  
 	{
 		scr_player_fuel_regen();
-		scr_mouse_cursor_switch();
+		//scr_mouse_cursor_switch();
 		scr_player_move();
 		scr_player_physics_normal();
 		scr_player_animate_move();

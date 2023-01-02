@@ -90,6 +90,7 @@ function scr_player_physics_normal(){
         else if (place_meeting(x, y + 1, oWall)) {
             vertspeed = 0;
 			onGround = 1;
+			JumpFuelDelay = 0; 
             break;
         }
     }
