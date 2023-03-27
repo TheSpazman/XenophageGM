@@ -2,12 +2,12 @@
 
 horizspeed = 0;
 vertspeed = 0;
-grav = 0.2;
+grav = 0.1;
 walkspeed = 4;
 canJump = 0;
-vertJump = -6;
-accel = 0.4;
-f_riction = 0.3;
+vertJump = -5;
+accel = 0.3;
+f_riction = 0.7;
 JumpFuelDelay = 0;
 deltaTime = delta_time / 1000000 
 

@@ -1,6 +1,8 @@
+
 width = 256; //Menu Object Width
 height = 256; // Menu Object Height
-
+image_xscale = width/sprite_get_width(sprite_index) // This sets the collision mask along the X-plane
+image_yscale = height/sprite_get_height(sprite_index) // This sets the collision mask along the Y-plane
 op_border = 32; // How much of a border between each option and box edge
 op_space = 32; // How much of a space between each option selection
 

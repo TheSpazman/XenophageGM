@@ -76,6 +76,8 @@ VDU_right = sLeonHUDPlaceholder;
 ticker_text = "";
 ticker_display_time = 5;
 TICKER_ALARM = 0;
+ticker_x = 8;
+ticker_y = 10;
 
 // Click-Button Variables (Up)
 

@@ -2,7 +2,8 @@
 
 up_button_hover = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), button_left, button_top, button_right, button_bottom);
 down_button_hover = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), down_button_left, down_button_top, down_button_right, down_button_bottom);
-mouseHUD = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),HUDBox_x1,HUDBox_y1,HUDBox_x2,HUDBox_y2);
+//mouseHUD = point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0),HUDBox_x1,HUDBox_y1,HUDBox_x2,HUDBox_y2);
+
 
 
 

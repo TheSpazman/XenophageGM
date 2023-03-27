@@ -1,5 +1,6 @@
 // Draw Menu Background
-draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0 , c_aqua, 1);
+draw_sprite_ext(sprite_index, image_index, x, y, (width/sprite_get_width(sprite_index)), (height/sprite_get_height(sprite_index)), 0 , c_aqua, 1);
+
 
 // Draw Menu Options 
 draw_set_font(global.font_main);       //

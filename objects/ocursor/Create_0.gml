@@ -1,6 +1,6 @@
+/// @description Mouse Cursor Created.
+
 /// Mouse Cursor Graphic 
 
-
-
-cursorSprite = "CursorCrosshairNone"
+/// cursorSpriteSelected = 0;
 window_set_cursor (cr_none);

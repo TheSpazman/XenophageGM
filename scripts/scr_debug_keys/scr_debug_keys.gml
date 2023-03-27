@@ -14,24 +14,28 @@ crash_this_game = keyboard_check_pressed(vk_pause);                             
 if (stop_hurting_yourself)
 {
 	oPlayer.player_health -= 10
+	set_ticker_text("DEBUG: Vitality Reduced by 10")
 	show_debug_message("Ouch!")
 }
 
 if (stop_mindfcking_yourself)
 {
 	oPlayer.player_resolve -= 10
+	set_ticker_text("DEBUG: Resolve Reduced by 10")
 	show_debug_message("Ouch! (Again)")
 }
 
 if (start_healing_yourself)
 {
 	oPlayer.player_health += 10
+	set_ticker_text("DEBUG: Vitality Increased by 10")
 	show_debug_message("Yay!")
 }
 
 if (start_psychoanalyzing_yourself)
 {
 	oPlayer.player_resolve += 10
+	set_ticker_text("DEBUG: Resolve Increased by 10")
 	show_debug_message("Yay! (Again)")
 }
 
@@ -39,6 +43,7 @@ if (start_selfcare)
 {
 	oPlayer.player_health = oPlayer.health_max
 	oPlayer.player_resolve = oPlayer.resolve_max
+	set_ticker_text("DEBUG: Stats Reset to Max")
 	show_debug_message("Stats Restored!")
 }
 

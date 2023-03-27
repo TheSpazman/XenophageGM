@@ -8,6 +8,7 @@ if(instance_exists(oPlayer))
 draw_sprite_stretched(sLowerHUD,0, HUDLow_x, HUDLow_y, HUDLow_w, HUDLow_h);
 
 
+
 /// Vitality Bar 
 draw_set_halign(fa_left)
 draw_sprite_stretched(sHUDVitality, -1,144,712,32,26) image_speed = 0.5;
@@ -134,9 +135,10 @@ draw_text_transformed_colour(gems_balance_x, gems_balance_y, oPlayer.gems_balanc
 if (ticker_text != "" && alarm[TICKER_ALARM] >= 0) 
 	{
   // draw_set_font, draw_set_halign, draw_text_transformed_colour, etc etc etc
-	draw_set_font(global.font_main);
-	show_debug_message("This should be running!" + string(alarm[TICKER_ALARM])) 
-	draw_text_transformed_colour(8,10,ticker_text,1, 1, image_angle, $8c3afc, $8c3afc, $8c3afc, $8c3afc, 1);
+		draw_set_font(global.font_main);
+		draw_set_halign(fa_left);
+		show_debug_message("This should be running!" + string(alarm[TICKER_ALARM])) 
+		draw_text_transformed_colour(ticker_x,ticker_y,ticker_text,1, 1, 0, $8c3afc, $8c3afc, $8c3afc, $8c3afc, 1);
 	
 	}
 
@@ -160,20 +162,5 @@ else
     draw_sprite_stretched(sSelectDown, 0, click_button_down_x, click_button_down_y, click_button_down_width, click_button_down_height);
 }
 
-///Does the Cursor Code go Here? 
 
-	if  !mouseHUD && instance_exists(oCursor)
-		{
-			oCursor.cursorSprite = "CursorCrosshairGreen";
-			//mouseHUDOn = 0; 
-			//mouseNeutralOn = 1;
-			//mouseHostileOn = 0;
-			//mouseInteractive = 0;
-		}
-		
-		else //if instance_exists(oCursor)
-		
-		{
-			oCursor.cursorSprite = "CursorCrosshairPointer";
-		}
 	
